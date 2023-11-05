@@ -36,7 +36,6 @@ const Register = () => {
 				console.log(error);
 			}
 		}
-		console.log("submit");
 	};
 
 	return (

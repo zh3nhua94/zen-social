@@ -11,8 +11,7 @@ const Profile = () => {
 	const PF = process.env.REACT_APP_PUBLIC_FOLDER;
 	const [loading, setLoading] = useState(false);
 	const [user, setUser] = useState([]);
-	const username = useParams().username;
-	console.log(username);
+	const { username } = useParams();
 
 	useEffect(() => {
 		setLoading(true);
