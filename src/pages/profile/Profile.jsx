@@ -9,10 +9,12 @@ import { useParams } from "react-router-dom";
 
 const Profile = () => {
 	const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+	const [loading, setLoading] = useState(false);
 	const [user, setUser] = useState([]);
 	const username = useParams().username;
 
 	useEffect(() => {
+		setLoading(true);
 		const fetchUser = async () => {
 			try {
 				const res = await axios.get(process.env.REACT_APP_API_URL + `/users?username=${username}`);
@@ -23,7 +25,7 @@ const Profile = () => {
 		};
 		fetchUser();
 		window.scrollTo(0, 0);
-	}, [username]);
+	}, [username, loading]);
 
 	return (
 		<>
