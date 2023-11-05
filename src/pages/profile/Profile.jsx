@@ -12,6 +12,7 @@ const Profile = () => {
 	const [loading, setLoading] = useState(false);
 	const [user, setUser] = useState([]);
 	const username = useParams().username;
+	console.log(username);
 
 	useEffect(() => {
 		setLoading(true);
